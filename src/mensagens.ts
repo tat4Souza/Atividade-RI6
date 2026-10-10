@@ -21,6 +21,6 @@ export default class Mensagem {
   }
 
   public boasVindas() {
-    console.log("\nCalculadora polimórfica\n");
+    console.log(`\n ¯\\_(ツ)_/¯ Calculadora polimórfica \n`);
   }
 }
