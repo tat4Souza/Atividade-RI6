@@ -18,7 +18,7 @@ let iniciar = () => {
   });
 
   leitor.question(
-    `Quais são seus números e a operação desejada?\n`,
+    `\x1b[92mQuais são seus números e a operação desejada?\n\x1b[0m`,
     (valor) => {
       let instrucoes = valor.split(" ");
       let numero1 = Number(instrucoes[0]);
@@ -35,7 +35,7 @@ let iniciar = () => {
         operacao = instrucoes[0];
       }
 
-      console.log(`Estas foram suas instruções: ${instrucoes}\n`);
+      console.log(`\nEstas foram suas instruções: ${instrucoes}\n`);
 
       let calculo;
       let operacaoValida = true;
@@ -63,11 +63,11 @@ let iniciar = () => {
           calculo = new SegundoGrau();
           break;
         case "Sair":
-          console.log(`Encerrando, até uma próxima...`);
+          console.log(`\x1b[35mEncerrando, até uma próxima...\x1b[0m`);
           operacaoValida = false;
           break;
         default:
-          console.log(`Operação não entendida :(`);
+          console.log(`\x1b[91mErro: Operação não entendida :(\n\x1b[0m`);
           operacaoValida = false;
       }
 
@@ -77,10 +77,10 @@ let iniciar = () => {
           if (operacao === "Bhaskara")
             resultado = calculo.calcular(numero1, numero2, numero3);
           console.log(
-            `O resultado da operação é: ${Array.isArray(resultado) ? `${resultado[0]} e ${resultado[1]}` : resultado}\n`,
+            `\x1b[37mO resultado da operação é: ${Array.isArray(resultado) ? `${resultado[0]} e ${resultado[1]}` : resultado}\n\x1b[0m`,
           );
         } catch (erro: any) {
-          console.log(`Erro: ${erro.message}\n`);
+          console.log(`\x1b[91mErro: ${erro.message}\n\x1b[0m`);
         }
       }
 
